@@ -12,7 +12,8 @@ button.addEventListener("click", (e) => {
 async function getData(city) {
   main_box.classList.add("visually-hidden");
   loder.classList.remove("visually-hidden");
-
+  cityname.value =city ;
+  error_box.innerHTML = "";
   try {
     const url =
       "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=" + city;
@@ -31,7 +32,7 @@ async function getData(city) {
       const result = await response.json();
 
       main_box.classList.remove("visually-hidden");
-      error_box.innerHTML = "";
+      
 
       loder.classList.add("visually-hidden");
       console.log(result);
